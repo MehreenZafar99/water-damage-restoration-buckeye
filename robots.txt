@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /content/
+Disallow: /_templates/
+Disallow: /tools/
+
+Sitemap: https://waterdamagerestorationbuckeyeaz.com/sitemap.xml

@@ -1,0 +1,17 @@
+# Dependencies / caches
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Local / kit sources (not the live site)
+files/
+content/
+.cursor/
+*.log
+*.zip
+
+# Editor
+.vscode/
+.idea/
