@@ -302,36 +302,9 @@ a.card:hover {
 .area-grid a:hover { background: var(--saffron-soft); border-color: var(--oxblood); color: var(--oxblood-deep); }
 
 /* ---------- 9. Steps, ticks, panels ---------- */
-.steps,
-.process-flow {
-  list-style: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 0 var(--s-5);
-}
-.steps > li,
-.process-flow > li {
-  list-style: none;
-  list-style-type: none;
-}
-.steps > li::marker,
-.process-flow > li::marker {
-  content: none;
-  display: none;
-  font-size: 0;
-}
-.steps { counter-reset: step; }
-.steps > li {
-  counter-increment: step; position: relative;
-  padding-left: 52px; margin-bottom: var(--s-4); min-height: 36px;
-}
-.steps > li::before {
-  content: counter(step); position: absolute; left: 0; top: -2px;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--oxblood); color: var(--paper);
-  font-family: var(--font-head); font-weight: 800;
-  display: grid; place-items: center;
-}
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0 0 var(--s-5); }
+.steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: var(--s-4); min-height: 36px; }
+.steps > li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 36px; height: 36px; border-radius: 50%; background: var(--oxblood); color: var(--paper); font-family: var(--font-head); font-weight: 800; display: grid; place-items: center; }
 .steps--row { display: grid; gap: var(--gap); }
 @media (min-width: 900px) {
   .steps--row { grid-template-columns: repeat(5, 1fr); }
@@ -340,27 +313,24 @@ a.card:hover {
 
 /* Compact process timeline (homepage) — not cards */
 .process-flow {
-  margin: 0; counter-reset: flow;
+  list-style: none; margin: 0; padding: 0; counter-reset: flow;
   display: grid; gap: 0; max-width: 920px;
 }
 .process-flow > li {
-  counter-increment: flow;
+  counter-increment: flow; position: relative;
   display: grid; grid-template-columns: 44px 1fr; gap: var(--s-4);
   padding: var(--s-4) 0; margin: 0;
   border-bottom: 1px solid var(--line);
 }
 .process-flow > li:last-child { border-bottom: 0; }
-.process-flow strong {
-  display: block; color: var(--oxblood); font-size: 1.15rem; margin-bottom: 4px;
-  font-family: var(--font-head); font-stretch: 87%; font-weight: 800;
-}
+.process-flow strong { display: block; color: var(--oxblood); font-size: 1.15rem; margin-bottom: 4px; font-family: var(--font-head); font-stretch: 87%; font-weight: 800; }
 .process-flow span { color: var(--muted); font-size: 1.02rem; line-height: 1.5; }
 .process-flow > li::before {
   content: counter(flow);
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--saffron); color: var(--saffron-ink);
   font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
-  display: grid; place-items: center;
+  display: grid; place-items: center; flex: none;
 }
 
 .content-bound {
