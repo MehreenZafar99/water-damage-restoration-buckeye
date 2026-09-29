@@ -13,7 +13,7 @@ ICON = (
 BTN = f'<a class="btn btn--call btn--call-inline" href="tel:+16235550148">{ICON} (623) 555-0148</a>'
 BLOCK = f'''        <div class="footer-contact">
           {BTN}
-          <p class="footer-meta"><a href="mailto:contact@waterdamagerestorationbuckeyeaz.com">contact@waterdamagerestorationbuckeyeaz.com</a><br>21430 W Yuma Rd, Suite 120, Buckeye, AZ 85326<br>Open 24 hours, 7 days a week<br>Serving Buckeye, AZ 85326 and 85396</p>
+          <p class="footer-meta"><a href="mailto:contact@waterdamagerestorationbuckeyeaz.com">contact@waterdamagerestorationbuckeyeaz.com</a><br>Yuma Rd, Suite 120, Buckeye, AZ 85326<br>Open 24 hours, 7 days a week<br>Serving Buckeye, AZ 85326 and 85396</p>
         </div>'''
 
 # Replace old phone-only paragraph in footer-brand
@@ -33,7 +33,7 @@ for p in ROOT.rglob("*.html"):
     t = p.read_text(encoding="utf-8")
     if "site-footer" not in t:
         continue
-    if "contact@waterdamagerestorationbuckeyeaz.com" in t and "21430 W Yuma Rd" in t:
+    if "contact@waterdamagerestorationbuckeyeaz.com" in t and "Yuma Rd" in t:
         continue
     nt = OLD2.sub(BLOCK, t, count=1)
     if nt == t:

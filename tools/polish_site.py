@@ -15,7 +15,7 @@ PHONE = "(623) 555-0148"
 BTN = f'<a class="btn btn--call btn--call-inline" href="tel:+16235550148">{ICON} {PHONE}</a>'
 BTN_BLOCK = f'<a class="btn btn--call btn--block" href="tel:+16235550148">{ICON} {PHONE}</a>'
 
-ADDRESS = "21430 W Yuma Rd, Suite 120, Buckeye, AZ 85326"
+ADDRESS = "Yuma Rd, Suite 120, Buckeye, AZ 85326"
 EMAIL = "contact@waterdamagerestorationbuckeyeaz.com"
 EMAIL_LINK = f'<a href="mailto:{EMAIL}">{EMAIL}</a>'
 

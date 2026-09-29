@@ -4,7 +4,7 @@ import re
 
 idx = Path("index.html").read_text(encoding="utf-8")
 print("email", "contact@waterdamagerestorationbuckeyeaz.com" in idx)
-print("address", "21430 W Yuma Rd" in idx)
+print("address", "Yuma Rd" in idx)
 print("process-flow", "process-flow" in idx)
 print("content-bound", idx.count("content-bound"))
 
