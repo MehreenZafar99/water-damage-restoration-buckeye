@@ -17,7 +17,7 @@ m = re.search(r'class="emergency-bar".{0,350}', idx, re.S)
 print("emergency:", re.sub(r"\s+", " ", m.group(0)[:280]) if m else "none")
 
 svc = Path("services/emergency-water-removal/index.html").read_text(encoding="utf-8")
-print("svc email/addr", "contact@" in svc, "21430" in svc)
+print("svc email/addr", "contact@" in svc, "Yuma Rd" in svc)
 print("nested btn", bool(re.search(r'btn--call[^>]*>[\s\S]{0,180}<a class="btn', svc)))
 
 # count pages missing email
