@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://waterdamagerestorationbuckeyeaz.com"
-PHONE_OK = {"(623) 555-0148", "tel:+16235550148", "+1-623-555-0148"}
+PHONE_OK = {"(623) 303-9391", "tel:+16233039391", "+1-623-303-9391"}
 FORBIDDEN_PLACES = ["phoenix", "goodyear", "avondale", "litchfield", "tonopah", "surprise, az",
                     "glendale", "peoria", "tolleson", "waddell", "west valley", "scottsdale", "mesa", "tempe"]
 FORBIDDEN_TEXT = ["lorem ipsum", "todo", "coming soon", "placeholder", "developer note", "rank and rent", "lead gen"]

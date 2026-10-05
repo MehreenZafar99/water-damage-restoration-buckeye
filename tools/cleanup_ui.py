@@ -14,7 +14,7 @@ ICON = (
 
 def phone_btn(extra_class=""):
     cls = "btn btn--call" + ((" " + extra_class) if extra_class else "")
-    return f'<a class="{cls}" href="tel:+16235550148">{ICON} (623) 555-0148</a>'
+    return f'<a class="{cls}" href="tel:+16233039391">{ICON} (623) 303-9391</a>'
 
 CALL_CARD = f'''      <aside class="call-card" aria-label="Get help now">
         <h2>Need help now?</h2>
@@ -63,7 +63,7 @@ def remove_form_ctas(html: str) -> str:
         html,
     )
     html = re.sub(r'\s*<div class="divider">or send a request</div>', "", html)
-    html = re.sub(r' href="#request"', ' href="tel:+16235550148"', html)
+    html = re.sub(r' href="#request"', ' href="tel:+16233039391"', html)
     return html
 
 
@@ -97,7 +97,7 @@ def replace_tel_buttons(html: str) -> str:
     # Content may include SVG but must not include newlines spanning huge gaps —
     # allow whitespace/newlines only for short button innards (cap with {0,400})
     pattern = re.compile(
-        r'<a class="(btn btn--call[^"]*)" href="tel:\+16235550148">(.{0,500}?)</a>',
+        r'<a class="(btn btn--call[^"]*)" href="tel:\+16233039391">(.{0,500}?)</a>',
         re.S,
     )
 
@@ -115,8 +115,8 @@ def replace_tel_buttons(html: str) -> str:
 def strip_call_word_in_dark_cta(html: str) -> str:
     # CTA band dark buttons: "Call (623)..." -> icon + number
     return re.sub(
-        r'(<a class="btn btn--dark" href="tel:\+16235550148">)\s*Call \(623\) 555-0148\s*(</a>)',
-        rf'\1{ICON} (623) 555-0148\2',
+        r'(<a class="btn btn--dark" href="tel:\+16233039391">)\s*Call \(623\) 303-9391\s*(</a>)',
+        rf'\1{ICON} (623) 303-9391\2',
         html,
     )
 
@@ -203,7 +203,7 @@ def fix_cost_guide_link(html: str) -> str:
     )
     html = re.sub(
         r'<a href="/contact/">send us a request\.?</a>',
-        '<a href="tel:+16235550148">(623) 555-0148</a>',
+        '<a href="tel:+16233039391">(623) 303-9391</a>',
         html,
         flags=re.I,
     )

@@ -11,9 +11,9 @@ ICON = (
     'c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1'
     'h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>'
 )
-PHONE = "(623) 555-0148"
-BTN = f'<a class="btn btn--call btn--call-inline" href="tel:+16235550148">{ICON} {PHONE}</a>'
-BTN_BLOCK = f'<a class="btn btn--call btn--block" href="tel:+16235550148">{ICON} {PHONE}</a>'
+PHONE = "(623) 303-9391"
+BTN = f'<a class="btn btn--call btn--call-inline" href="tel:+16233039391">{ICON} {PHONE}</a>'
+BTN_BLOCK = f'<a class="btn btn--call btn--block" href="tel:+16233039391">{ICON} {PHONE}</a>'
 
 ADDRESS = "Yuma Rd, Suite 120, Buckeye, AZ 85326"
 EMAIL = "contact@waterdamagerestorationbuckeyeaz.com"
@@ -25,7 +25,7 @@ FOOTER_CONTACT = f'''        <div class="footer-contact">
         </div>'''
 
 FOOTER_OLD = re.compile(
-    r'<p><a class="footer-phone"[^>]*>\(623\) 555-0148</a><br>Open 24 hours, 7 days a week<br>Serving Buckeye, AZ 85326 and 85396</p>',
+    r'<p><a class="footer-phone"[^>]*>\(623\) 303-9391</a><br>Open 24 hours, 7 days a week<br>Serving Buckeye, AZ 85326 and 85396</p>',
 )
 
 
@@ -55,19 +55,19 @@ def protect_regions(html: str):
 def phone_to_buttons(chunk: str) -> str:
     # Skip if already a btn--call containing the number nearby — replace plain tel links first
     chunk = re.sub(
-        r'<a href="tel:\+16235550148"(?! class="btn)[^>]*>\s*(?:Call\s+)?\(623\) 555-0148\s*</a>',
+        r'<a href="tel:\+16233039391"(?! class="btn)[^>]*>\s*(?:Call\s+)?\(623\) 303-9391\s*</a>',
         BTN,
         chunk,
     )
     chunk = re.sub(
-        r'<a class="footer-phone" href="tel:\+16235550148">\(623\) 555-0148</a>',
+        r'<a class="footer-phone" href="tel:\+16233039391">\(623\) 303-9391</a>',
         BTN,
         chunk,
     )
     # Emergency bar: turn the linked number into a compact button
     chunk = re.sub(
         r'(Water in your home or business right now\? Call )'
-        r'<a href="tel:\+16235550148">\(623\) 555-0148</a>'
+        r'<a href="tel:\+16233039391">\(623\) 303-9391</a>'
         r'(, we answer day and night\.)',
         rf'\1{BTN}\2',
         chunk,
@@ -75,7 +75,7 @@ def phone_to_buttons(chunk: str) -> str:
     # Also if already rewritten partially
     chunk = re.sub(
         r'(Water in your home or business right now\? Call )'
-        r'<a class="btn btn--call[^"]*" href="tel:\+16235550148">.*?</a>'
+        r'<a class="btn btn--call[^"]*" href="tel:\+16233039391">.*?</a>'
         r'(, we answer day and night\.)',
         rf'\1{BTN}\2',
         chunk,
@@ -91,7 +91,7 @@ def phone_to_buttons(chunk: str) -> str:
             return m.group(0)
         return BTN
 
-    chunk = re.sub(r"\(623\) 555-0148", plain_phone, chunk)
+    chunk = re.sub(r"\(623\) 303-9391", plain_phone, chunk)
     return chunk
 
 

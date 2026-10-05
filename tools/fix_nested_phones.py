@@ -11,7 +11,7 @@ ICON = (
     'c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1'
     'h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>'
 )
-PHONE = "(623) 555-0148"
+PHONE = "(623) 303-9391"
 
 
 def clean_button(classes: str) -> str:
@@ -23,7 +23,7 @@ def clean_button(classes: str) -> str:
         cls = "btn btn--call btn--block"
     elif "btn--dark" in classes:
         cls = "btn btn--dark"
-        return f'<a class="{cls}" href="tel:+16235550148">{ICON} {PHONE}</a>'
+        return f'<a class="{cls}" href="tel:+16233039391">{ICON} {PHONE}</a>'
     elif "btn--call-inline" in classes and "btn--block" not in classes and "header-cta" not in classes:
         # keep inline only if it was truly inline-only
         cls = "btn btn--call btn--call-inline"
@@ -32,13 +32,13 @@ def clean_button(classes: str) -> str:
         if "btn--call-inline" in classes and "header-cta" not in classes and "btn--block" not in classes:
             # outer had both? prefer non-inline full button
             cls = "btn btn--call"
-    return f'<a class="{cls}" href="tel:+16235550148">{ICON} {PHONE}</a>'
+    return f'<a class="{cls}" href="tel:+16233039391">{ICON} {PHONE}</a>'
 
 
 NESTED = re.compile(
-    r'<a class="(btn[^"]*)" href="tel:\+16235550148">'
+    r'<a class="(btn[^"]*)" href="tel:\+16233039391">'
     r'(?:(?!</a>).)*?'
-    r'<a class="btn[^"]*" href="tel:\+16235550148">.*?</a>\s*'
+    r'<a class="btn[^"]*" href="tel:\+16233039391">.*?</a>\s*'
     r'</a>',
     re.S,
 )

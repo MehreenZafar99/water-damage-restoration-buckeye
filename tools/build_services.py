@@ -7,8 +7,8 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://waterdamagerestorationbuckeyeaz.com"
-PHONE = "(623) 555-0148"
-TEL = "tel:+16235550148"
+PHONE = "(623) 303-9391"
+TEL = "tel:+16233039391"
 
 SERVICES_NAV = [
     ("emergency-water-removal", "Emergency water removal"),
